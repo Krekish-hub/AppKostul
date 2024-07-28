@@ -1,0 +1,32 @@
+﻿<Window x:Class="UchetGIC.MiniWindows.AddSeasonalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавить сезонную работу" Height="300" Width="400">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Тип работы:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Name="TxtWorkType" Margin="5"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Дата начала:" VerticalAlignment="Center" Margin="5"/>
+        <DatePicker Grid.Row="1" Grid.Column="1" Name="DpStartDate" Margin="5"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Дата окончания:" VerticalAlignment="Center" Margin="5"/>
+        <DatePicker Grid.Row="2" Grid.Column="1" Name="DpEndDate" Margin="5"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="График:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Name="TxtSchedule" Margin="5"/>
+
+        <Button Grid.Row="4" Grid.ColumnSpan="2" Content="Сохранить" HorizontalAlignment="Center" Margin="5" Click="BtnSave_Click"/>
+    </Grid>
+</Window>

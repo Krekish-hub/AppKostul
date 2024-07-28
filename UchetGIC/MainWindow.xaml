@@ -1,0 +1,37 @@
+﻿<Window x:Class="UchetGIC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UchetGIC"
+        mc:Ignorable="d"
+        Title="Учёт" Height="550" Width="1000"
+        MinHeight="550" MinWidth="950">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.ColumnSpan="2"
+            Background="LightGray"/>
+        
+        <TextBlock 
+            Text="{Binding ElementName=MainFrame,
+        Path=Content.Title}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="32" Grid.ColumnSpan="2"/>
+
+        <Frame
+            Name="MainFrame"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

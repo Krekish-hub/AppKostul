@@ -1,0 +1,54 @@
+﻿<Window x:Class="UchetGIC.MiniWindows.RequestLeaveWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Отпуск" Height="300" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Content="Тип отпуска:" 
+            VerticalAlignment="Center" 
+            Margin="5"/>
+        <ComboBox 
+            x:Name="CmbLeaveType" 
+            Grid.Row="0" 
+            Grid.Column="1" 
+            Margin="5">
+            <ComboBoxItem 
+                Content="Декрет"/>
+            <ComboBoxItem 
+                Content="Отпуск"/>
+            <ComboBoxItem 
+                Content="Больничный"/>
+            </ComboBox>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Дата начала:" VerticalAlignment="Center" Margin="5"/>
+        <DatePicker x:Name="DpStartDate" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Дата окончания:" VerticalAlignment="Center" Margin="5"/>
+        <DatePicker x:Name="DpEndDate" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Заметки:" VerticalAlignment="Center" Margin="5"/>
+        <TextBox x:Name="TxtNotes" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button 
+                Content="Отправить" 
+                Click="BtnSave_Click" 
+                Style="{StaticResource OK}"/>
+        </StackPanel>
+    </Grid>
+</Window>

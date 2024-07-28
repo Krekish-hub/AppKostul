@@ -1,0 +1,89 @@
+﻿<Page x:Class="UchetGIC.UserPages.EmployeeMenuPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UchetGIC.UserPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Пользователь">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Width="160"
+            HorizontalAlignment="Left">
+            <Button Content="≡" 
+                    Click="ToggleMenu" 
+                    VerticalAlignment="Top"
+                    Style="{StaticResource Menu}"
+                    HorizontalAlignment="Left"/>
+            <Border
+                x:Name="SlideMenu"
+                Background="Transparent"
+                Width="0"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Left">
+                <StackPanel x:Name="MenuStackPanel">
+                    <CheckBox 
+                        Content="Зарплата" 
+                        Checked="MenuCheckBox_Checked" 
+                        Click="BtnZarplata_Click" 
+                        Style="{StaticResource MenuCheckBox}"/>
+                    <CheckBox 
+                        Content="Смена" 
+                        Checked="MenuCheckBox_Checked" 
+                        Click="BtnSmena_Click" 
+                        Style="{StaticResource MenuCheckBox}"/>
+                    <!-- <CheckBox  -->
+                    <!--     Content="Табель"  -->
+                    <!--     Checked="MenuCheckBox_Checked"  -->
+                    <!--     Click="BtnTabel_Click"  -->
+                    <!--     Style="{StaticResource MenuCheckBox}"/> -->
+                    <CheckBox 
+                        Content="Отпуск" 
+                        Checked="MenuCheckBox_Checked" 
+                        Click="BtnLeave_Click" 
+                        Style="{StaticResource MenuCheckBox}"/>
+                    <CheckBox 
+                        Content="Численность" 
+                        Checked="MenuCheckBox_Checked" 
+                        Click="BtnEmployeeCount_Click" 
+                        Style="{StaticResource MenuCheckBox}"/>
+                    <CheckBox 
+                        Content="Питание" 
+                        Checked="MenuCheckBox_Checked" 
+                        Click="BtnMeal_Click" 
+                        Style="{StaticResource MenuCheckBox}"/>
+                    <CheckBox 
+                        Content="Спецодежда" 
+                        Checked="MenuCheckBox_Checked" 
+                        Click="BtnSpecialClothing_Click"
+                        Style="{StaticResource MenuCheckBox}"/>
+                    <CheckBox 
+                        Content="Сезоны" 
+                        Checked="MenuCheckBox_Checked" 
+                        Click="BtnSeasonal_Click" 
+                        Style="{StaticResource MenuCheckBox}"/>
+                    <CheckBox 
+                        Content="Обратная связь" 
+                        Checked="MenuCheckBox_Checked" 
+                        Click="BtnFeedback_Click" 
+                        Style="{StaticResource MenuCheckBox}"/>
+                    <CheckBox 
+                        Content="Выход" 
+                        Checked="MenuCheckBox_Checked" 
+                        Click="BtnClose_Click" 
+                        Style="{StaticResource MenuCheckBox}"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <Frame
+            Grid.Column="1"
+            Name="ContentFrame"
+            NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Page>

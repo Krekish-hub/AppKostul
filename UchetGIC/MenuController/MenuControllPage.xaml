@@ -1,0 +1,78 @@
+﻿<Page x:Class="UchetGIC.MenuController.MenuControllPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UchetGIC.MenuController"
+      xmlns:controllPages="clr-namespace:UchetGIC.ControllPages"
+      xmlns:userPages="clr-namespace:UchetGIC.UserPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Окно директора">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Width="160"
+            HorizontalAlignment="Left">
+            <!-- Кнопка для открытия и закрытия бокового меню -->
+            <Button Content="≡" 
+                    Click="ToggleMenu" 
+                    VerticalAlignment="Top"
+                    Style="{StaticResource Menu}"
+                    HorizontalAlignment="Left"/>
+            <Border
+                x:Name="SlideMenu"
+                Background="Transparent"
+                Width="0"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Left">
+                <StackPanel
+                    x:Name="MenuStackPanel">
+                    <CheckBox
+                        Content="Профиль" 
+                        Style="{StaticResource MenuCheckBox}"
+                        Name="btnProfile"
+                        Click="BtnProfile_Click"
+                        Checked="MenuCheckBox_Checked"/>
+                    <CheckBox
+                        Content="Сотрудники"
+                        Style="{StaticResource MenuCheckBox}"
+                        Name="btnEmployee"
+                        Click="BtnEmployee_Click"
+                        Checked="MenuCheckBox_Checked"/>
+                    <CheckBox
+                        Content="Табель"
+                        Style="{StaticResource MenuCheckBox}"
+                        Name="btnTabel"
+                        Click="BtnTabel_Click"
+                        Checked="MenuCheckBox_Checked"/>
+                    <Grid>
+                        <CheckBox
+                            Content="Заявки"
+                            Style="{StaticResource MenuCheckBox}"
+                            Name="btnRequests"
+                            Click="BtnRequests_OnClick"
+                            Checked="MenuCheckBox_Checked"/>
+                        <Label
+                            x:Name="PendingRequestsTextBlock"
+                            Style="{StaticResource CircularTextBlockStyle}"/>
+                    </Grid>
+                    <CheckBox
+                        Content="Выйти"
+                        Style="{StaticResource MenuCheckBox}"
+                        Name="btnClose"
+                        Click="BtnClose_Click"
+                        Checked="MenuCheckBox_Checked"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <Frame
+            Grid.Column="1"
+            Name="ContentFrame"
+            NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Page>

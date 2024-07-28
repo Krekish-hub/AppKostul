@@ -1,0 +1,41 @@
+﻿<Page x:Class="UchetGIC.UserPages.WorkTimePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Табелирование рабочего времени">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ComboBox 
+            Name="CmbEmployee" 
+            Grid.Row="0" Grid.Column="0" 
+            Margin="5" 
+            SelectionChanged="CmbEmployee_SelectionChanged"/>
+        <DataGrid 
+            Name="DataGridWorkTime" 
+            Grid.Row="1" Grid.Column="0" 
+            AutoGenerateColumns="False"
+            Margin="5">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date}" Width="*"/>
+                <DataGridTextColumn Header="Начало работы" Binding="{Binding StartTime}" Width="*"/>
+                <DataGridTextColumn Header="Конец работы" Binding="{Binding EndTime}" Width="*"/>
+                <DataGridTextColumn Header="Перерывы" Binding="{Binding BreakTime}" Width="*"/>
+                <DataGridTextColumn Header="Общее рабочее время" Binding="{Binding TotalTime}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button 
+            Content="Добавить запись" 
+            Grid.Row="2" Grid.Column="0" 
+            Style="{StaticResource OK}"
+            Width="150"
+            Click="BtnAddWorkTime_Click"/>
+    </Grid>
+</Page>

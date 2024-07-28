@@ -1,0 +1,97 @@
+﻿<Window x:Class="UchetGIC.MiniWindows.AddWorkTimeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавить рабочее время" Height="300" Width="400">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Content="Дата:" 
+            VerticalAlignment="Center" 
+            Margin="5"/>
+        <DatePicker 
+            Grid.Row="0" 
+            Grid.Column="1" 
+            Name="DpDate" 
+            Margin="5"/>
+
+        <Label 
+            Grid.Row="1" 
+            Grid.Column="0" 
+            Content="Начало работы:"
+            VerticalAlignment="Center"
+            Margin="5"/>
+        <TextBox 
+            Grid.Row="1" 
+            Grid.Column="1" 
+            Name="TxtStartTime"
+            Margin="5" Text="00:00:00"
+            GotFocus="TextBox_GotFocus" PreviewTextInput="TextBox_PreviewTextInput" TextChanged="TextBox_TextChanged"/>
+
+        <Label 
+            Grid.Row="2" 
+            Grid.Column="0" 
+            Content="Конец работы:" 
+            VerticalAlignment="Center" 
+            Margin="5"/>
+        <TextBox 
+            Grid.Row="2" 
+            Grid.Column="1" 
+            Name="TxtEndTime"
+            Margin="5" Text="00:00:00" 
+            GotFocus="TextBox_GotFocus"
+            PreviewTextInput="TextBox_PreviewTextInput" TextChanged="TextBox_TextChanged"/>
+
+        <Label 
+            Grid.Row="3" 
+            Grid.Column="0"
+            Content="Перерыв:"
+            VerticalAlignment="Center" 
+            Margin="5"/>
+        <TextBox 
+            Grid.Row="3" 
+            Grid.Column="1" 
+            Name="TxtBreakTime" 
+            Margin="5"
+            Text="00:00:00" 
+            GotFocus="TextBox_GotFocus"
+            PreviewTextInput="TextBox_PreviewTextInput" TextChanged="TextBox_TextChanged"/>
+
+        <Label 
+            Grid.Row="4" 
+            Grid.Column="0" 
+            Content="Общее время:" 
+            VerticalAlignment="Center" 
+            Margin="5"/>
+        <TextBox 
+            Grid.Row="4" 
+            Grid.Column="1" 
+            Name="TxtTotalTime" 
+            Margin="5" 
+            IsReadOnly="True"/>
+
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+            <Button 
+                Content="Сохранить" 
+                Click="BtnSave_Click" 
+                Style="{StaticResource OK}"/>
+            <Button 
+                Content="Отмена" 
+                Click="BtnCancel_Click"
+                Style="{StaticResource OK}"/>
+        </StackPanel>
+    </Grid>
+</Window>

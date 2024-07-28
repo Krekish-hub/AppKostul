@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="396b5ed92d044932816caf715cf6794b" Name="Diagram1">
+        <EntityTypeShape EntityType="UchetDBModel.Company" Width="1.5" PointX="3" PointY="7.5" />
+        <EntityTypeShape EntityType="UchetDBModel.Departments" Width="1.5" PointX="3" PointY="17.5" />
+        <EntityTypeShape EntityType="UchetDBModel.EmployeeObject" Width="1.5" PointX="10.5" PointY="11.5" />
+        <EntityTypeShape EntityType="UchetDBModel.Employees" Width="1.5" PointX="5.25" PointY="9.875" />
+        <EntityTypeShape EntityType="UchetDBModel.Feedback" Width="1.5" PointX="7.5" PointY="19.125" />
+        <EntityTypeShape EntityType="UchetDBModel.Leave" Width="1.5" PointX="7.5" PointY="12.5" />
+        <EntityTypeShape EntityType="UchetDBModel.LocalServ" Width="1.5" PointX="3" PointY="15.25" />
+        <EntityTypeShape EntityType="UchetDBModel.MealSchedule" Width="1.5" PointX="7.5" PointY="3.75" />
+        <EntityTypeShape EntityType="UchetDBModel.Objects" Width="1.5" PointX="8.25" PointY="0.75" />
+        <EntityTypeShape EntityType="UchetDBModel.Role" Width="1.5" PointX="0.75" PointY="11.625" />
+        <EntityTypeShape EntityType="UchetDBModel.Salary" Width="1.5" PointX="3" PointY="19.875" />
+        <EntityTypeShape EntityType="UchetDBModel.SeasonalEmployee" Width="1.5" PointX="7.5" PointY="6.75" />
+        <EntityTypeShape EntityType="UchetDBModel.SpecialClothing" Width="1.5" PointX="7.5" PointY="21.875" />
+        <EntityTypeShape EntityType="UchetDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="UchetDBModel.User" Width="1.5" PointX="3" PointY="11.25" />
+        <EntityTypeShape EntityType="UchetDBModel.WorkTime" Width="1.5" PointX="7.5" PointY="15.875" />
+        <AssociationConnector Association="UchetDBModel.FK_Employees_Company" />
+        <AssociationConnector Association="UchetDBModel.FK_Department" />
+        <AssociationConnector Association="UchetDBModel.FK__EmployeeO__Emplo__6FB49575" />
+        <AssociationConnector Association="UchetDBModel.FK__EmployeeO__Objec__70A8B9AE" />
+        <AssociationConnector Association="UchetDBModel.FK__Feedback__Employ__625A9A57" />
+        <AssociationConnector Association="UchetDBModel.FK__MealSched__Emplo__6AEFE058" />
+        <AssociationConnector Association="UchetDBModel.FK__SeasonalE__Emplo__65370702" />
+        <AssociationConnector Association="UchetDBModel.FK__SpecialCl__Emplo__681373AD" />
+        <AssociationConnector Association="UchetDBModel.FK__WorkTime__Employ__73852659" />
+        <AssociationConnector Association="UchetDBModel.FK_Employees_LocalServ1" />
+        <AssociationConnector Association="UchetDBModel.FK_Employees_Salary" />
+        <AssociationConnector Association="UchetDBModel.FK_Employees_User" />
+        <AssociationConnector Association="UchetDBModel.FK_Leave_Employees" />
+        <AssociationConnector Association="UchetDBModel.FK_User_Role" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

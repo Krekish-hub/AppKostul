@@ -1,0 +1,96 @@
+﻿<Page x:Class="UchetGIC.ControllPages.UserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:UchetGIC.ControllPages"
+      mc:Ignorable="d"
+      Title="UserPage" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <StackPanel 
+                Name="StackFiltr" 
+                Orientation="Horizontal" 
+                Margin="10">
+                <TextBox 
+                    Name="TxtFilterLastName"
+                    Width="130" 
+                    GotFocus="TxtFilter_GotFocus" 
+                    LostFocus="TxtFilter_LostFocus"
+                    Text="Фамилия"
+                    Margin="0 10 5 10"/>
+                <ComboBox 
+                    Name="CmbFilterCompany" 
+                    Width="100"
+                    Margin="0 10 5 10"
+                    SelectionChanged="FilterChanged"/>
+                <ComboBox 
+                    Name="CmbFilterPosition" 
+                    Width="100"
+                    Margin="0 10 5 10"
+                    SelectionChanged="FilterChanged"/>
+                <DatePicker 
+                    Name="DpFilterHireDateFrom" 
+                    Margin="0 10 5 10"
+                    SelectedDateChanged="FilterChanged"/>
+                <DatePicker 
+                    Name="DpFilterHireDateTo"
+                    Margin="0 10 5 10"
+                    SelectedDateChanged="FilterChanged"/>
+                <Button 
+                    Name="BtnResetFilters" 
+                    Content="Сбросить" 
+                    Click="BtnResetFilters_Click"
+                    Style="{StaticResource OK}"/>
+                
+            </StackPanel>
+            <StackPanel 
+                Orientation="Horizontal">
+                <DataGrid 
+                    Name="GridTabel" 
+                    AutoGenerateColumns="False" 
+                    Margin="10"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch" 
+                    IsReadOnly="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn 
+                            Header="Номер" 
+                            Binding="{Binding LocalServ.Number}"/>
+                        <DataGridTextColumn 
+                            Header="Фамилия" 
+                            Binding="{Binding LastName}"/>
+                        <DataGridTextColumn 
+                            Header="Компания" 
+                            Binding="{Binding Company1.NameCompany}"/>
+                        <DataGridTextColumn 
+                            Header="Должность" 
+                            Binding="{Binding User.Role.Name}"/>
+                        <DataGridTextColumn 
+                            Header="Дата трудоустройства" 
+                            Binding="{Binding HireDate, StringFormat={}{0:dd/MM/yyyy}}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Orientation="Vertical" Margin="10">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 5 0 0">
+                        <Border BorderBrush="Black" CornerRadius="5" BorderThickness="1">
+                            <Button Style="{StaticResource OK}" Content="Добавить сотрудника" Width="Auto" Name="btnAdd" Click="btnAdd_Click"/>
+                        </Border>
+                        <Button 
+                            Style="{StaticResource OK}" 
+                            Content="Редактировать" 
+                            Name="btnEdit" 
+                            Click="btnEdit_Click" 
+                            Width="Auto"/>
+                        <Button 
+                            Style="{StaticResource OK}" 
+                            Content="Удалить" 
+                            Name="btnDelete" 
+                            Click="btnDelete_Click" 
+                            Width="Auto"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
